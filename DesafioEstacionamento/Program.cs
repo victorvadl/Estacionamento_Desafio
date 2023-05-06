@@ -56,4 +56,5 @@ while (exibirMenu)
     Console.ReadLine();
 }
 
+Console.WriteLine($"O lucro total do seu estacionamento foi de: R$ {es.lucro}");
 Console.WriteLine("O programa se encerrou");

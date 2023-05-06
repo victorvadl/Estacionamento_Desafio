@@ -5,6 +5,7 @@ namespace DesafioEstacionamento.Models
         private decimal precoInicial = 0;
         private decimal precoPorHora = 0;
         private List<string> veiculos = new List<string>();
+        public decimal lucro;
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
         {
@@ -14,39 +15,63 @@ namespace DesafioEstacionamento.Models
 
         public void AdicionarVeiculo()
         {
-            // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
-            // *IMPLEMENTE AQUI*
+            // Implementado!
             Console.WriteLine("Digite a placa do veículo para estacionar:");
+            string? input = Console.ReadLine();
+
+            
+            if (input != "" && input != null)
+            {
+                if (veiculos.Any(x => x.ToUpper() == input.ToUpper()))
+                {
+                    Console.WriteLine("Veículo já se encontra escationado. Verifique a placa.");
+                }
+                else
+                {
+                    veiculos.Add(input);
+                } 
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida. Tente novamente");
+            }
         }
 
         public void RemoverVeiculo()
         {
             Console.WriteLine("Digite a placa do veículo para remover:");
 
-            // Pedir para o usuário digitar a placa e armazenar na variável placa
-            // *IMPLEMENTE AQUI*
-            string placa = "";
+            // Implementado
+            string? placa = Console.ReadLine();
 
-            // Verifica se o veículo existe
-            if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
+            if (placa != "" && placa != null)
             {
-                Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+                // Verifica se o veículo existe
+                if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
+                {
+                    Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
-                // TODO: Pedir para o usuário digitar a quantidade de horas que o veículo permaneceu estacionado,
-                // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
-                // *IMPLEMENTE AQUI*
-                int horas = 0;
-                decimal valorTotal = 0; 
+                    // Implementado
+                    int.TryParse(Console.ReadLine(), out int horas);
+                    decimal valorTotal = precoInicial + precoPorHora * horas;
 
-                // TODO: Remover a placa digitada da lista de veículos
-                // *IMPLEMENTE AQUI*
+                    // Implementado
+                    veiculos.Remove(placa);
 
-                Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
+                    Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
+                    lucro += valorTotal;
+                }
+                else
+                {
+                    Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                }
             }
+
             else
             {
-                Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                Console.WriteLine("Entrada inválida. Tente novamente");  
             }
+            
         }
 
         public void ListarVeiculos()
@@ -55,8 +80,12 @@ namespace DesafioEstacionamento.Models
             if (veiculos.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-                // *IMPLEMENTE AQUI*
+                
+                // Implementado
+                foreach(string placa in veiculos)
+                {
+                    Console.WriteLine(placa);
+                }
             }
             else
             {
