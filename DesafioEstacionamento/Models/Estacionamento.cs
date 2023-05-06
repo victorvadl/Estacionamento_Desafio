@@ -19,7 +19,7 @@ namespace DesafioEstacionamento.Models
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string? input = Console.ReadLine();
 
-            
+            // Implementado!
             if (input != "" && input != null)
             {
                 if (veiculos.Any(x => x.ToUpper() == input.ToUpper()))
@@ -44,6 +44,7 @@ namespace DesafioEstacionamento.Models
             // Implementado
             string? placa = Console.ReadLine();
 
+            // Implementado!
             if (placa != "" && placa != null)
             {
                 // Verifica se o veículo existe
