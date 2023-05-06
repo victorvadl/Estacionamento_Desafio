@@ -15,13 +15,15 @@ Fui contratado para construir um sistema para um estacionamento, que será usado
 Precisarei construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
 ![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
 
-A classe contém três variáveis, sendo:
+A classe contém três variáveis, porém resolvi acrescentar uma a mais. Sendo elas:
 
 **precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
 
 **precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
 
 **veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
+
+**lucro**: Tipo decimal, é a soma da receita de todos os veículos estacionados. Apresenta o lucro total ao encerrar o programa.
 
 A classe contém três métodos, sendo:
 
@@ -37,7 +39,3 @@ Por último, deverá ser feito um menu interativo com as seguintes ações imple
 2. Remover veículo
 3. Listar veículos
 4. Encerrar
-
-## Solução
-
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
