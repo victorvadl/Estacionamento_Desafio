@@ -33,7 +33,7 @@ A classe contém três métodos, sendo:
 
 **ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
 
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
+Por último, foi desenvolvido um menu interativo com as seguintes ações implementadas:
 
 1. Cadastrar veículo
 2. Remover veículo
