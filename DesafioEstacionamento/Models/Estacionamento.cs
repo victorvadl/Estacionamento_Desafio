@@ -15,11 +15,11 @@ namespace DesafioEstacionamento.Models
 
         public void AdicionarVeiculo()
         {
-            // Implementado!
+            
             Console.WriteLine("Digite a placa do veículo para estacionar:");
             string? input = Console.ReadLine();
 
-            // Implementado!
+            
             if (input != "" && input != null)
             {
                 if (veiculos.Any(x => x.ToUpper() == input.ToUpper()))
@@ -41,10 +41,10 @@ namespace DesafioEstacionamento.Models
         {
             Console.WriteLine("Digite a placa do veículo para remover:");
 
-            // Implementado
+            
             string? placa = Console.ReadLine();
 
-            // Implementado!
+            
             if (placa != "" && placa != null)
             {
                 // Verifica se o veículo existe
@@ -52,11 +52,11 @@ namespace DesafioEstacionamento.Models
                 {
                     Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
-                    // Implementado
+                    
                     int.TryParse(Console.ReadLine(), out int horas);
                     decimal valorTotal = precoInicial + precoPorHora * horas;
 
-                    // Implementado
+                    
                     veiculos.Remove(placa);
 
                     Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
@@ -82,7 +82,7 @@ namespace DesafioEstacionamento.Models
             {
                 Console.WriteLine("Os veículos estacionados são:");
                 
-                // Implementado
+                
                 foreach(string placa in veiculos)
                 {
                     Console.WriteLine(placa);
